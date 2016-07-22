@@ -1,0 +1,9 @@
+# Sequence Processing Plans
++ 2 points for a match
++ 1 point for a near match
++ -1 points for a mismatch
++ 0 points for an out of position match
++ Add points for HSP in general
++ add points for specific matches that appear to be part of NRPS
+    + PCP is only 70-90, good choice
+    + check table 1 of structural biology of nrps for more possible choices
