@@ -3,6 +3,8 @@ from tkinter import *
 import TreeBuilder
 import csvGenerator
 import DecisionAnalyze
+import DecisionDataParser
+import TwoSeqCompare
 import os
 # base script that runs the two primary parts of the program
 ana_dir = "Analysis"
@@ -10,6 +12,7 @@ nrps_dir = "NRPS"
 dot_dir = "TreeDot"
 Sraw_dir = "BLASTStandardRaw"
 bla_dir = "BLAST"
+dat_dir = "NRPSData"
 root_dir = "NRPSRoot"
 xml_dir = "BLASTXML"
 csv_dir = "NRPSCSV"
@@ -222,6 +225,7 @@ class MyApp:
     # the action handler for the analysis button; this checks which aspects of analysis should be undertaken
     def x_button_click(self):
         if len(self.blast_analysis) > 0 and self.blast_analysis.count(None) is not len(self.blast_analysis):
+            # DecisionDataParser.parse_data(self.blast_analysis)
             BlastSequenceSearch.get_sequences(self.blast_analysis)
             csvGenerator.create_csv(self.blast_analysis)
 
@@ -329,7 +333,8 @@ class MyApp:
             self.post_analysis.remove(self.name_files[j])
 
     def post_button_click(self):
-        DecisionAnalyze.post_analyze(self.post_analysis, self.t_var, self.tree_type, self.v)
+        file = TwoSeqCompare.compare(self.v, self.post_analysis)
+        # DecisionAnalyze.post_analyze(self.post_analysis, self.t_var, self.tree_type, file)
 
 # the body which is executed raw
 root = Tk()
