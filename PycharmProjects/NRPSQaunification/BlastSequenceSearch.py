@@ -61,13 +61,13 @@ def get_sequences(blast_analysis):
                                                                    alignment.title[:alignment.title.index(" ")]
                                                                        + "-" + str(i) + "-hsp"))))), 'w'),
                                                                            BLASTWriter.write_blast_standard(i,
-                                                                               alignment, hsp, rec_dir))
+                                                                               alignment, hsp))
                         BLASTWriter.create_blast_files(open(os.path.join(ana_dir, os.path.join(bla_dir,
                                                            os.path.join(Sraw_dir, os.path.join(rec_dir,
                                                                alignment.title[:alignment.title.index(" ")] + "-" +
                                                                    str(i) + "-hsp")))), 'w'),
                                                                        BLASTWriter.write_blast_standard(i, alignment,
-                                                                           hsp, rec_dir))
+                                                                           hsp))
                         BLASTWriter.create_blast_files(open(os.path.join(ana_dir, os.path.join(bla_dir,
                                                            os.path.join(fas_dir, os.path.join(rec_dir,
                                                                os.path.join(alignment.title[:alignment.title.index(" ")],

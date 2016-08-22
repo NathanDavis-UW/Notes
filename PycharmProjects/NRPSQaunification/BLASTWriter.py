@@ -27,7 +27,7 @@ def create_blast_files(f, str_arr):
 
 
 # creates an array of strings that contain info for a standard blast info file
-def write_blast_standard(i, alignment, hsp, rec_dir):
+def write_blast_standard(i, alignment, hsp):
     f = []
     f.append("sequence: " + str(alignment.title[:alignment.title.index(" ")] + "-" + str(i)) + '\n')
     f.append("length: " + str(abs(hsp.sbjct_end-hsp.sbjct_start)) + '\n')

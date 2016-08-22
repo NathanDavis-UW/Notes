@@ -334,7 +334,7 @@ class MyApp:
 
     def post_button_click(self):
         file = TwoSeqCompare.compare(self.v, self.post_analysis)
-        # DecisionAnalyze.post_analyze(self.post_analysis, self.t_var, self.tree_type, file)
+        DecisionAnalyze.post_analyze(self.post_analysis, self.t_var, self.tree_type)
 
 # the body which is executed raw
 root = Tk()
