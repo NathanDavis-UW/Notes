@@ -23,7 +23,7 @@ def create_csv(tree_analysis):
             f.write("non-specific sequence^")
             f.write("length^")
             f.write("description^")
-            f.write("weighted e value^")
+            f.write("weighted e^")
             f.write("score^")
             f.write("adjusted score^")
             f.write("e value" + '\n')

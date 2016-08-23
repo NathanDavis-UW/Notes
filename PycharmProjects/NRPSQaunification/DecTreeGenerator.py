@@ -76,9 +76,9 @@ def create_key(alt_csv, file, dir):
     ax.xaxis.set_visible(False)
     ax.yaxis.set_visible(False)
     ax.set_frame_on(False)
-    tabla = table(ax, alt_csv, loc='upper right', colWidths=[0.15] * len(alt_csv.columns))
+    tabla = table(ax, alt_csv, loc='upper right', colWidths=[0.13] * len(alt_csv.columns))
     tabla.auto_set_font_size(False)
-    tabla.set_fontsize(5)
-    tabla.scale(.8, .8)
+    tabla.set_fontsize(4)
+    tabla.scale(.7, .7)
     plt.savefig(os.path.join(ana_dir, os.path.join(tree_dir, os.path.join(key_dir, os.path.join(dir, file[:len(file)-4] + "_key.png")))),
                    transparent=True)

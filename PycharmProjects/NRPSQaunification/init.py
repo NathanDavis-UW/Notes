@@ -49,12 +49,16 @@ class MyApp:
         self.blast_analysis = []
         self.tree_analysis = []
         self.tree_type = []
+        self.post_tree_type = []
         self.tree_frame = []
+        self.post_tree_frame = []
         self.post_analysis = []
         self.titles = []
+        self.post_titles = []
         self.d_var = []
         self.one_time = 0
         self.one_time_b = 0
+        self.post_one_time_b = 0
 
         # definition of all primary frames
         self.myParent = root
@@ -110,6 +114,12 @@ class MyApp:
 
         self.post_title_frame = Frame(self.post_top, relief=RIDGE)
         self.post_title_frame.pack(side=TOP, fill=BOTH, expand=YES)
+
+        self.post_tree_type_frame = Frame(self.post_top, relief=RIDGE)
+        self.post_tree_type_frame.pack(side=LEFT, fill=BOTH, expand=YES)
+
+        self.post_type_text_frame = Frame(self.post_tree_type_frame, relief=RIDGE)
+        self.post_type_text_frame.pack(side=LEFT, fill=BOTH, expand=YES)
 
         self.ana_name_frame = Frame(self.post_top, relief=RIDGE)
         self.ana_name_frame.pack(side=LEFT, fill=BOTH, expand=YES)
@@ -181,6 +191,9 @@ class MyApp:
         # --------------------------------------------------------------------------------------------------------------
         # creates a title and checkbuttons for set of data you want to do Analysis with
         Label(self.ana_name_frame, text="Data Set", font=("Courier", 10)).pack(side=TOP)
+
+        self.pd_var = []
+        self.post_data_files = []
 
         self.n_var = []
         self.name_files = []
@@ -325,16 +338,69 @@ class MyApp:
         else:
             self.tree_type[i].remove(self.data_files[z])
 
+    def post_check_click_type(self, i, z, pd_var):
+        if pd_var[z].get() == 1:
+            self.post_tree_type[i].insert(z, self.post_data_files[z])
+        else:
+            self.post_tree_type[i].remove(self.post_data_files[z])
+
     def check_click_name(self, j):
         if self.n_var[j].get() == 1:
-            self.post_analysis.insert(j, self.name_files[j])
+            while len(self.post_tree_type) - 1 < j:
+                self.post_tree_type.append([])
+            while len(self.post_analysis) - 1 < j:
+                self.post_analysis.append(None)
+            self.post_analysis[j] = self.name_files[j][0:len(self.name_files[j]) - 4]
+            while len(self.post_tree_frame) - 1 < j:
+                self.post_tree_frame.append(Frame(self.post_tree_type_frame, relief=RIDGE))
+                self.post_tree_frame[len(self.post_tree_frame) - 1].pack(side=LEFT, fill=BOTH, expand=YES)
+            while len(self.pd_var) - 1 < j:
+                self.pd_var.append([])
+            while len(self.post_titles) - 1 < j:
+                self.post_titles.append(Label())
+            self.post_titles[j] = Label(self.post_tree_frame[j], text=self.post_analysis[j])
+            self.post_titles[j].pack(side=TOP)
 
+            if self.post_one_time_b == 0:
+                self.post_one_time_b = 1
+                # creation of labels for tree formatting buttons
+                f = open(os.path.join(ana_dir, os.path.join(nrps_dir, os.path.join(csv_dir, self.name_files[0]))), 'r')
+                s = f.readline()
+
+                # title of check buttons in check_click_tree
+                Label(self.post_type_text_frame, text="Type", font=("Courier", 10)).pack(side=TOP)
+
+                for file in s.split("^"):
+                    if not file == "description" and not file == "sequence" and not file == "non-specific sequence":
+                        self.post_data_files.append(file)
+                        Label(self.post_type_text_frame, text=file, pady=3).pack(side=TOP)
+
+            # creation of tree formatting buttons
+            z = 0
+            while len(self.pd_var[j]) < len(self.post_type_text_frame.winfo_children()):
+                self.pd_var[j].append(IntVar())
+            for widget in self.post_type_text_frame.winfo_children()[0:len(self.post_type_text_frame.winfo_children()) - 1]:
+                Checkbutton(self.post_tree_frame[j], variable=self.pd_var[j][z], onvalue=1, offvalue=0, pady=2,
+                            command=curry(self.post_check_click_type, j, z, self.pd_var[j])).pack(side=TOP)
+                z += 1
         else:
-            self.post_analysis.remove(self.name_files[j])
+            if not any(self.post_analysis):
+                self.post_type_text_frame.destroy()
+                self.post_type_text_frame = Frame(self.post_tree_type_frame, relief=RIDGE)
+                self.post_type_text_frame.pack(side=LEFT, fill=BOTH, expand=YES)
+                self.post_one_time_b = 0
+
+            # removes all parts of a tree choice
+            self.post_analysis[j] = None
+            self.post_tree_frame[j].destroy()
+            self.post_tree_frame[j] = Frame(self.post_tree_type_frame, relief=RIDGE)
+            self.post_tree_frame[j].pack(side=LEFT, fill=BOTH, expand=YES)
+            self.post_titles[j].destroy()
+            self.post_titles[j] = Label()
 
     def post_button_click(self):
         file = TwoSeqCompare.compare(self.v, self.post_analysis)
-        DecisionAnalyze.post_analyze(self.post_analysis, self.t_var, self.tree_type)
+        DecisionAnalyze.post_analyze(self.post_analysis, self.t_var, self.post_tree_type, file)
 
 # the body which is executed raw
 root = Tk()
