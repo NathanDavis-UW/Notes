@@ -7,11 +7,16 @@ from Bio.SeqRecord import SeqRecord
 from io import StringIO
 import BLASTWriter
 import os
+import BLASTMatrix
+
 search_database = "nucleotide"
 ma_dir = "Matrix"
+ma_gen_dir = "MatrixGenBank"
+ma_stan_dir = "MatrixStandard"
 alt_dir = "Alternative Analysis"
 root_dir = "NRPSRoot"
 dat_dir = "NRPSData"
+alt_root_dir = "Alternative NRPSRoot"
 nrps_dir= "NRPS"
 ana_dir = "Analysis"
 gen_dir = "DataGenBank"
@@ -67,5 +72,38 @@ def compare(subjct, records):
             return os.path.join(ana_dir, os.path.join(nrps_dir, os.path.join(dat_dir,
                                                                               os.path.join(dat_stan_dir,
                                                                                            subjct.get()))))
-def alt_compare(subjct, record):
-    csvGenerator.create_dir()
+def alt_compare(subject, record):
+    BLASTMatrix.simple_dir(ma_dir)
+    BLASTMatrix.create_dir(ma_gen_dir, ma_dir)
+    BLASTMatrix.create_dir(ma_stan_dir, ma_dir)
+    sbject = SeqIO.read(os.path.join(alt_root_dir, subject + ".gbk"), format="gbwithparts")
+    sbjct = SeqRecord(sbject, id="sub")
+    recrd = SeqIO.read(os.path.join(alt_root_dir, record + ".gbk"), format="gbwithparts")
+    rcrd = SeqRecord(recrd, id="rec")
+    SeqIO.write(rcrd.seq, "rec.fasta", "fasta")
+    SeqIO.write(sbjct.seq, "sub.fasta", "fasta")
+    result_handle = NcbiblastnCommandline(query="rec.fasta", subject="sub.fasta", outfmt=5)()[0]
+    blast_result_record = NCBIXML.read(StringIO(result_handle))
+    i = 0
+    BLASTMatrix.create_dir(os.path.join(ma_stan_dir, record), ma_dir)
+    alignment = blast_result_record.alingments[0]
+    BLASTMatrix.create_dir(os.path.join(ma_stan_dir, os.path.join(record, alignment.title)), ma_dir)
+    for hsp in alignment.hsps:
+        BLASTWriter.create_blast_files(open(os.path.join(alt_dir, os.path.join(ma_dir, os.path.join(ma_stan_dir,
+                        os.path.join(record, os.path.join(alignment.title, alignment.title + "-hsp-" + str(i)))))),
+                            'w'), BLASTWriter.write_blast_standard(i, alignment, hsp))
+        i += 1
+    alt_result_handle = NcbiblastnCommandline(query="sub.fasta", subject="rec.fasta", outfmt=5)()[0]
+    os.remove("sub.fasta")
+    os.remove("rec.fasta")
+    alt_blast_result_record = NCBIXML.read(StringIO(alt_result_handle))
+    k = 0
+    BLASTMatrix.create_dir(os.path.join(ma_stan_dir, subject), ma_dir)
+    alt_alignment = alt_blast_result_record.alingments[0]
+    BLASTMatrix.create_dir(os.path.join(ma_stan_dir, os.path.join(subject, alt_alignment.title)), ma_dir)
+    for hsp in alt_alignment.hsps:
+        BLASTWriter.create_blast_files(open(os.path.join(alt_dir, os.path.join(ma_dir, os.path.join(ma_stan_dir,
+                        os.path.join(subject, os.path.join(alt_alignment.tlte, alt_alignment.title + "-hsp-" +
+                            str(k)))))), 'w'), BLASTWriter.write_blast_standard(k, alt_alignment, hsp))
+        k += 1
+
