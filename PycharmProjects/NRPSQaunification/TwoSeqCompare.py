@@ -72,38 +72,35 @@ def compare(subjct, records):
             return os.path.join(ana_dir, os.path.join(nrps_dir, os.path.join(dat_dir,
                                                                               os.path.join(dat_stan_dir,
                                                                                            subjct.get()))))
-def alt_compare(subject, record):
+def alt_compare(record, subject):
     BLASTMatrix.simple_dir(ma_dir)
     BLASTMatrix.create_dir(ma_gen_dir, ma_dir)
     BLASTMatrix.create_dir(ma_stan_dir, ma_dir)
-    sbject = SeqIO.read(os.path.join(alt_root_dir, subject + ".gbk"), format="gbwithparts")
+    sbject = SeqIO.read(os.path.join(alt_root_dir, subject), format="gb")
     sbjct = SeqRecord(sbject, id="sub")
-    recrd = SeqIO.read(os.path.join(alt_root_dir, record + ".gbk"), format="gbwithparts")
+    recrd = SeqIO.read(os.path.join(alt_root_dir, record), format="gb")
     rcrd = SeqRecord(recrd, id="rec")
     SeqIO.write(rcrd.seq, "rec.fasta", "fasta")
     SeqIO.write(sbjct.seq, "sub.fasta", "fasta")
     result_handle = NcbiblastnCommandline(query="rec.fasta", subject="sub.fasta", outfmt=5)()[0]
     blast_result_record = NCBIXML.read(StringIO(result_handle))
-    i = 0
     BLASTMatrix.create_dir(os.path.join(ma_stan_dir, record), ma_dir)
-    alignment = blast_result_record.alingments[0]
-    BLASTMatrix.create_dir(os.path.join(ma_stan_dir, os.path.join(record, alignment.title)), ma_dir)
-    for hsp in alignment.hsps:
-        BLASTWriter.create_blast_files(open(os.path.join(alt_dir, os.path.join(ma_dir, os.path.join(ma_stan_dir,
-                        os.path.join(record, os.path.join(alignment.title, alignment.title + "-hsp-" + str(i)))))),
-                            'w'), BLASTWriter.write_blast_standard(i, alignment, hsp))
-        i += 1
-    alt_result_handle = NcbiblastnCommandline(query="sub.fasta", subject="rec.fasta", outfmt=5)()[0]
-    os.remove("sub.fasta")
-    os.remove("rec.fasta")
-    alt_blast_result_record = NCBIXML.read(StringIO(alt_result_handle))
-    k = 0
-    BLASTMatrix.create_dir(os.path.join(ma_stan_dir, subject), ma_dir)
-    alt_alignment = alt_blast_result_record.alingments[0]
-    BLASTMatrix.create_dir(os.path.join(ma_stan_dir, os.path.join(subject, alt_alignment.title)), ma_dir)
-    for hsp in alt_alignment.hsps:
-        BLASTWriter.create_blast_files(open(os.path.join(alt_dir, os.path.join(ma_dir, os.path.join(ma_stan_dir,
-                        os.path.join(subject, os.path.join(alt_alignment.tlte, alt_alignment.title + "-hsp-" +
-                            str(k)))))), 'w'), BLASTWriter.write_blast_standard(k, alt_alignment, hsp))
-        k += 1
-
+    if len(blast_result_record.alignments) > 0:
+        alignment = blast_result_record.alignments[0]
+        BLASTMatrix.create_dir(os.path.join(ma_stan_dir, os.path.join(record, alignment.title)), ma_dir)
+        e_list = []
+        for hsp in alignment.hsps:
+            e_list.append(hsp.align_length-hsp.score)
+        os.remove("sub.fasta")
+        os.remove("rec.fasta")
+        sum = 0
+        for e in e_list:
+            sum += e
+        return int((sum/len(e_list))/1000)
+    else:
+        sum = 0
+        f = open("sub.fasta")
+        sub_list = f.readlines()
+        for line in sub_list[1:]:
+            sum += len(line)
+        return int(sum/1000)
