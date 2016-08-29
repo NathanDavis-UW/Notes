@@ -73,6 +73,7 @@ def compare(subjct, records):
                                                                               os.path.join(dat_stan_dir,
                                                                                            subjct.get()))))
 def alt_compare(record, subject):
+    print(str(record) + ":" + str(subject))
     BLASTMatrix.simple_dir(ma_dir)
     BLASTMatrix.create_dir(ma_gen_dir, ma_dir)
     BLASTMatrix.create_dir(ma_stan_dir, ma_dir)
