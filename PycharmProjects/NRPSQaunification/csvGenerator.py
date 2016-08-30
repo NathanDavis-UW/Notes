@@ -37,7 +37,10 @@ def create_csv(tree_analysis):
                 Sf_text = sub_f.readlines()
                 f.write(Sf_text[0][10:Sf_text[0].index("-")] + "^")
                 f.write(Sf_text[1][8:len(Sf_text[1])-1] + "^")
-                f.write(Sf_text[2][13:len(Sf_text[2])-1] + "^")
+                if len(Sf_text[2][13:len(Sf_text[2])-1]) <= 85:
+                    f.write(Sf_text[2][13:len(Sf_text[2])-1] + "^")
+                else:
+                    f.write(Sf_text[2][13:len(Sf_text[2]) - 1][:85] + "^")
                 f.write(Sf_text[4][12:len(Sf_text[4])-1] + "^")
                 f.write(Sf_text[5][7:len(Sf_text[5])-1] + "^")
                 f.write(Sf_text[6][16:len(Sf_text[6])-1] + "^")

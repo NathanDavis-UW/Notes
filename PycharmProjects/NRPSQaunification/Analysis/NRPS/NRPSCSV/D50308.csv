@@ -73,7 +73,7 @@ gi|689271676|gb|CP003811.1|^485^Methylobacterium oryzae CBMB20, partial genome^1
 gi|578005119|gb|CP007155.1|^319^Kutzneria albida DSM 43870, partial genome^1.4926^190.0^0.5956112852664577^1.4926e-37
 gi|826168461|gb|CP011371.1|^253^[Polyangium] brachysporum strain DSM 7029, partial genome^30792000000.0^152.0^0.6007905138339921^3.0792e-27
 gi|730587126|gb|CP009747.1|^353^Pseudomonas parafulva strain CRS01-1, partial genome^30792000000.0^152.0^0.43059490084985835^3.0792e-27
-gi|45005|emb|X57310.1|^1238^Nocardia lactamdurans pcbAB and pcbC genes for alpha-aminoadipyl-L-cysteinyl-D-valine synthetase and isopenicillin N synthase^1.0738e-08^220.0^0.1777059773828756^1.0738e-45
+gi|45005|emb|X57310.1|^1238^Nocardia lactamdurans pcbAB and pcbC genes for alpha-aminoadipyl-L-cysteinyl-D-valine synthetase and^1.0738e-08^220.0^0.1777059773828756^1.0738e-45
 gi|1752727|dbj|D50308.1|^348^Lysobacter lactamgenus DNA for alpha-aminoadipyl-cysteinyl-valine synthetase, partial cds^1.4926^190.0^0.5459770114942529^1.4926e-37
 gi|951715918|gb|CP011131.1|^356^Lysobacter gummosus strain 3.2.11, partial genome^114751.0^172.0^0.48314606741573035^1.14751e-32
 gi|146403799|gb|CP000494.1|^230^Bradyrhizobium sp. BTAi1, partial genome^375123000000.0^148.0^0.6434782608695652^3.75123e-26
@@ -110,7 +110,7 @@ gi|826168461|gb|CP011371.1|^301^[Polyangium] brachysporum strain DSM 7029, parti
 gi|959204059|emb|LN899819.1|^254^Ralstonia solanacearum genome assembly 9 genomes, chromosome : I^59442500.0^162.0^0.6377952755905512^5.94425e-30
 gi|146403799|gb|CP000494.1|^230^Bradyrhizobium sp. BTAi1, partial genome^32876.700000000004^174.0^0.7565217391304347^3.28767e-33
 gi|520999024|gb|CP003969.1|^249^Sorangium cellulosum So0157-2, partial genome^107475000000.0^150.0^0.6024096385542169^1.07475e-26
-gi|45005|emb|X57310.1|^10325^Nocardia lactamdurans pcbAB and pcbC genes for alpha-aminoadipyl-L-cysteinyl-D-valine synthetase and isopenicillin N synthase^0.0^4498.0^0.43564164648910414^0.0
+gi|45005|emb|X57310.1|^10325^Nocardia lactamdurans pcbAB and pcbC genes for alpha-aminoadipyl-L-cysteinyl-D-valine synthetase and^0.0^4498.0^0.43564164648910414^0.0
 gi|520999024|gb|CP003969.1|^378^Sorangium cellulosum So0157-2, partial genome^17030600.0^164.0^0.43386243386243384^1.70306e-30
 gi|342298470|emb|FR831800.1|^306^Myxococcus xanthus althiomycin biosynthetic gene cluster (almEDCABF genes), strain DK897^114751.0^172.0^0.5620915032679739^1.14751e-32
 gi|347668095|gb|JN596952.1|^317^Lysobacter enzymogenes strain OH11 WAPS biosynthetic gene cluster, partial sequence^63.46699999999999^184.0^0.580441640378549^6.3467e-36
@@ -126,7 +126,7 @@ gi|469775917|gb|CP004013.1|^270^Ralstonia solanacearum FQY_4 megaplasmid, partia
 gi|520999024|gb|CP003969.1|^280^Sorangium cellulosum So0157-2, partial genome^8822050000.0^154.0^0.55^8.82205e-28
 gi|520999024|gb|CP003969.1|^303^Sorangium cellulosum So0157-2, partial genome^4.5658999999999993e-07^214.0^0.7062706270627063^4.5659e-44
 gi|1036556009|gb|CP015851.1|^270^Ralstonia solanacearum strain YC40-M plasmid, partial sequence^59442500.0^162.0^0.6^5.94425e-30
-gi|67524326|ref|XM_655133.1|^847^Aspergillus nidulans FGSC A4 N-(5-amino-5-carboxypentanoyl)-L-cysteinyl-D-valine synthase partial mRNA^1.307e-26^286.0^0.33766233766233766^1.307e-63
+gi|67524326|ref|XM_655133.1|^847^Aspergillus nidulans FGSC A4 N-(5-amino-5-carboxypentanoyl)-L-cysteinyl-D-valine synthase partial mR^1.307e-26^286.0^0.33766233766233766^1.307e-63
 gi|951306652|gb|CP013141.1|^356^Lysobacter antibioticus strain ATCC 29479 genome^59442500.0^162.0^0.4550561797752809^5.94425e-30
 gi|930568023|gb|CP012687.1|^321^Ralstonia solanacearum strain UY031, partial genome^207475000.0^160.0^0.4984423676012461^2.07475e-29
 gi|951306652|gb|CP013141.1|^368^Lysobacter antibioticus strain ATCC 29479 genome^8822050000.0^154.0^0.41847826086956524^8.82205e-28
@@ -171,7 +171,7 @@ gi|959209244|emb|LN899821.1|^307^Ralstonia solanacearum genome assembly 9 genome
 gi|342298470|emb|FR831800.1|^288^Myxococcus xanthus althiomycin biosynthetic gene cluster (almEDCABF genes), strain DK897^0.0351026^196.0^0.6805555555555556^3.51026e-39
 gi|347668095|gb|JN596952.1|^324^Lysobacter enzymogenes strain OH11 WAPS biosynthetic gene cluster, partial sequence^17030600.0^164.0^0.5061728395061729^1.70306e-30
 gi|43423|emb|X17355.1|^159^Flavobacterium pcbC gene for isopenicillin N synthase^1.39549e-32^308.0^1.9371069182389937^1.39549e-69
-gi|511485|gb|U12015.1|SCU12015^2270^Streptomyces clavuligerus lysine e-aminotransferase (lat) gene, complete cds, and delta-(L-alpha-aminoadipyl)-L-cysteinyl-D- valine synthetase (pcbAB) gene, partial cds^0.0^910.0^0.4008810572687225^0.0
+gi|511485|gb|U12015.1|SCU12015^2270^Streptomyces clavuligerus lysine e-aminotransferase (lat) gene, complete cds, and delta-(L-alpha-ami^0.0^910.0^0.4008810572687225^0.0
 gi|951715918|gb|CP011131.1|^463^Lysobacter gummosus strain 3.2.11, partial genome^17030600.0^164.0^0.3542116630669546^1.70306e-30
 gi|689271676|gb|CP003811.1|^485^Methylobacterium oryzae CBMB20, partial genome^1.5936599999999998e-06^212.0^0.43711340206185567^1.59366e-43
 gi|826168461|gb|CP011371.1|^306^[Polyangium] brachysporum strain DSM 7029, partial genome^375123000000.0^148.0^0.48366013071895425^3.75123e-26
@@ -199,7 +199,7 @@ gi|951306652|gb|CP013141.1|^302^Lysobacter antibioticus strain ATCC 29479 genome
 gi|959209244|emb|LN899821.1|^270^Ralstonia solanacearum genome assembly 9 genomes, chromosome : III^8822050000.0^154.0^0.5703703703703704^8.82205e-28
 gi|951306652|gb|CP013141.1|^356^Lysobacter antibioticus strain ATCC 29479 genome^0.42763799999999996^192.0^0.5393258426966292^4.27638e-38
 gi|959672264|emb|LN899820.1|^489^Ralstonia solanacearum genome assembly 9 genomes, chromosome : II^773.187^180.0^0.36809815950920244^7.73187e-35
-gi|45005|emb|X57310.1|^1308^Nocardia lactamdurans pcbAB and pcbC genes for alpha-aminoadipyl-L-cysteinyl-D-valine synthetase and isopenicillin N synthase^18.1836^186.0^0.14220183486238533^1.81836e-36
+gi|45005|emb|X57310.1|^1308^Nocardia lactamdurans pcbAB and pcbC genes for alpha-aminoadipyl-L-cysteinyl-D-valine synthetase and^18.1836^186.0^0.14220183486238533^1.81836e-36
 gi|959204059|emb|LN899819.1|^261^Ralstonia solanacearum genome assembly 9 genomes, chromosome : I^221.522^182.0^0.6973180076628352^2.21522e-35
 gi|2318|emb|X54853.1|^847^Aspergillus nidulans acvA gene^1.307e-26^286.0^0.33766233766233766^1.307e-63
 gi|347668095|gb|JN596952.1|^349^Lysobacter enzymogenes strain OH11 WAPS biosynthetic gene cluster, partial sequence^8822050000.0^154.0^0.44126074498567336^8.82205e-28
@@ -207,7 +207,7 @@ gi|951715918|gb|CP011131.1|^227^Lysobacter gummosus strain 3.2.11, partial genom
 gi|772904020|gb|CP009323.1|^380^Burkholderia gladioli strain ATCC 10248 chromosome 1, partial sequence^30792000000.0^152.0^0.4^3.0792e-27
 gi|951301122|gb|CP013140.1|^309^Lysobacter enzymogenes strain C3 genome^59442500.0^162.0^0.5242718446601942^5.94425e-30
 gi|959220006|emb|LN899824.1|^307^Ralstonia solanacearum genome assembly 9 genomes, chromosome : VI^0.00023651999999999996^204.0^0.6644951140065146^2.3652e-41
-gi|45005|emb|X57310.1|^615^Nocardia lactamdurans pcbAB and pcbC genes for alpha-aminoadipyl-L-cysteinyl-D-valine synthetase and isopenicillin N synthase^3.74792e-08^218.0^0.3544715447154472^3.74792e-45
+gi|45005|emb|X57310.1|^615^Nocardia lactamdurans pcbAB and pcbC genes for alpha-aminoadipyl-L-cysteinyl-D-valine synthetase and^3.74792e-08^218.0^0.3544715447154472^3.74792e-45
 gi|951301122|gb|CP013140.1|^464^Lysobacter enzymogenes strain C3 genome^4879340.0^166.0^0.3577586206896552^4.87934e-31
 gi|772904020|gb|CP009323.1|^377^Burkholderia gladioli strain ATCC 10248 chromosome 1, partial sequence^3.0764799999999997e-09^222.0^0.5888594164456233^3.07648e-46
 gi|365804155|gb|CP003219.1|^339^Streptomyces cattleya DSM 46488, partial genome^400521.0^170.0^0.5014749262536873^4.00521e-32
@@ -260,7 +260,7 @@ gi|337764029|emb|FQ859185.1|^1319^Streptomyces cattleya str. NRRL 8057 main chro
 gi|1046920989|gb|CP016559.1|^373^Streptomyces clavuligerus strain F613-1, partial genome^0.000825535^202.0^0.5415549597855228^8.25535e-41
 gi|1752727|dbj|D50308.1|^11168^Lysobacter lactamgenus DNA for alpha-aminoadipyl-cysteinyl-valine synthetase, partial cds^0.0^22338.0^2.000179083094556^0.0
 gi|959236254|emb|LN899827.1|^320^Ralstonia solanacearum genome assembly 9 genomes, chromosome : IX^32876.700000000004^174.0^0.54375^3.28767e-33
-gi|13398457|gb|AF335329.1|^854^Kallichroma tethys isopenicillin N synthase (pcbC) and alpha-aminoadipyl-cysteinyl-valine synthetase (pcbAB) genes, partial cds^1.81515e-37^326.0^0.38173302107728335^1.81515e-74
+gi|13398457|gb|AF335329.1|^854^Kallichroma tethys isopenicillin N synthase (pcbC) and alpha-aminoadipyl-cysteinyl-valine synthetase^1.81515e-37^326.0^0.38173302107728335^1.81515e-74
 gi|959236254|emb|LN899827.1|^270^Ralstonia solanacearum genome assembly 9 genomes, chromosome : IX^107475000000.0^150.0^0.5555555555555556^1.07475e-26
 gi|941149846|gb|CP007212.1|^360^Burkholderia plantarii strain ATCC 43733 chromosome 1, partial sequence^6.3411e-18^254.0^0.7055555555555556^6.3411e-55
 gi|1752727|dbj|D50308.1|^619^Lysobacter lactamgenus DNA for alpha-aminoadipyl-cysteinyl-valine synthetase, partial cds^0.0028813999999999997^200.0^0.32310177705977383^2.8814e-40
@@ -280,7 +280,7 @@ gi|951715918|gb|CP011131.1|^296^Lysobacter gummosus strain 3.2.11, partial genom
 gi|365804155|gb|CP003219.1|^347^Streptomyces cattleya DSM 46488, partial genome^5.20969^188.0^0.5417867435158501^5.20969e-37
 gi|930571144|gb|CP012688.1|^311^Ralstonia solanacearum strain UY031 plasmid, partial sequence^114751.0^172.0^0.5530546623794212^1.14751e-32
 gi|951301122|gb|CP013140.1|^374^Lysobacter enzymogenes strain C3 genome^375123000000.0^148.0^0.39572192513368987^3.75123e-26
-gi|45005|emb|X57310.1|^1291^Nocardia lactamdurans pcbAB and pcbC genes for alpha-aminoadipyl-L-cysteinyl-D-valine synthetase and isopenicillin N synthase^1.1454899999999998e-33^312.0^0.24167312161115415^1.14549e-70
+gi|45005|emb|X57310.1|^1291^Nocardia lactamdurans pcbAB and pcbC genes for alpha-aminoadipyl-L-cysteinyl-D-valine synthetase and^1.1454899999999998e-33^312.0^0.24167312161115415^1.14549e-70
 gi|520999024|gb|CP003969.1|^248^Sorangium cellulosum So0157-2, partial genome^30792000000.0^152.0^0.6129032258064516^3.0792e-27
 gi|930571144|gb|CP012688.1|^320^Ralstonia solanacearum strain UY031 plasmid, partial sequence^207475000.0^160.0^0.5^2.07475e-29
 gi|951306652|gb|CP013141.1|^359^Lysobacter antibioticus strain ATCC 29479 genome^1397950.0^168.0^0.467966573816156^1.39795e-31

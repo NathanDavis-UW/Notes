@@ -28,8 +28,9 @@ def create_blast_matrix(csv):
                 k -= 1
             prime_list.append(prime_seq)
             i += 1
-    pickle.dump(data_matrix, open("data_matrix_save.p", "wb"))
-    pickle.dump(data_matrix, open("name_list_save.p", "rb"))
+        pickle.dump(data_matrix, open("data_matrix_save.p", "wb"))
+        pickle.dump(name_list, open("name_list_save.p", "wb"))
+        data_matrix[name_list.index()]
     MultiDimensionalScaler.create_mds(data_matrix, name_list)
 
 # creates a directory that does sit inside a non-major sub-directory
