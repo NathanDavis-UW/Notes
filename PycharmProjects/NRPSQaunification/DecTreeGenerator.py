@@ -76,7 +76,7 @@ def create_key(alt_csv, file, dir):
     ax.xaxis.set_visible(False)
     ax.yaxis.set_visible(False)
     ax.set_frame_on(False)
-    tabla = table(ax, alt_csv, loc='upper right', colWidths=[0.135] * len(alt_csv.columns))
+    tabla = table(ax, alt_csv, loc='upper right', colWidths=[0.134] * len(alt_csv.columns))
     tabla.auto_set_font_size(False)
     tabla.set_fontsize(7)
     tabla.scale(.67, .67)
