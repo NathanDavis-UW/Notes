@@ -72,13 +72,13 @@ def show_tree(d_tree, factors, file, target, dir):
 
 # creates a png of table key for the tree and places it in a key directory
 def create_key(alt_csv, file, dir):
-    fig, ax = plt.subplots(figsize=(66, len(alt_csv)/4.1))
+    fig, ax = plt.subplots(figsize=(75, len(alt_csv)/3.8))
     ax.xaxis.set_visible(False)
     ax.yaxis.set_visible(False)
     ax.set_frame_on(False)
-    tabla = table(ax, alt_csv, loc='upper right', colWidths=[0.14] * len(alt_csv.columns))
+    tabla = table(ax, alt_csv, loc='upper right', colWidths=[0.135] * len(alt_csv.columns))
     tabla.auto_set_font_size(False)
     tabla.set_fontsize(7)
-    tabla.scale(.7, .7)
+    tabla.scale(.67, .67)
     plt.savefig(os.path.join(ana_dir, os.path.join(tree_dir, os.path.join(key_dir, os.path.join(dir, file[:len(file)-4] + "_key.png")))),
                    transparent=True)
